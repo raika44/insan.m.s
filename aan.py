@@ -132,6 +132,7 @@ helpMessage= """\n
 ● Gcancel:[number]
 ● Update welcome:[text]
 ● Check welcome message
+* Simsimi on/off
 
 ★ CANCEL MODE ★
 ● Rejectall
@@ -210,6 +211,7 @@ helpMessage= """\n
   [kerang ajaib]
 ● Sticker [expression]
 ● Mention all
+* Image [text]
 
 ★ BROADCASTING ★
 ● Pm cast   [text]
@@ -3452,11 +3454,42 @@ def bot(op):
                     cl.sendText(msg.to, wait["spam"])
 		
             elif "pam @" in msg.text:
+              if msg.from_ in admin:
                 _name = msg.text.replace("pam @","")
                 _nametarget = _name.rstrip(' ')
                 gs = cl.getGroup(msg.to)
                 for g in gs.members:
                     if _nametarget == g.displayName:
+                       cl.sendText(g.mid,"Spammed")
+                       ki.sendText(g.mid,"Spammed")
+                       kc.sendText(g.mid,"Spammed")
+                       ks.sendText(g.mid,"Spammed")
+                       kk.sendText(g.mid,"Spammed")
+                       kt.sendText(g.mid,"Spammed")
+                       cl.sendText(g.mid,"Spammed")
+                       ki.sendText(g.mid,"Spammed")
+                       kc.sendText(g.mid,"Spammed")
+                       ks.sendText(g.mid,"Spammed")
+                       kk.sendText(g.mid,"Spammed")
+                       kt.sendText(g.mid,"Spammed")
+                       cl.sendText(g.mid,"Spammed")
+                       ki.sendText(g.mid,"Spammed")
+                       kc.sendText(g.mid,"Spammed")
+                       ks.sendText(g.mid,"Spammed")
+                       kk.sendText(g.mid,"Spammed")
+                       kt.sendText(g.mid,"Spammed")
+                       cl.sendText(g.mid,"Spammed")
+                       ki.sendText(g.mid,"Spammed")
+                       kc.sendText(g.mid,"Spammed")
+                       ks.sendText(g.mid,"Spammed")
+                       kk.sendText(g.mid,"Spammed")
+                       kt.sendText(g.mid,"Spammed")
+                       cl.sendText(g.mid,"Spammed")
+                       ki.sendText(g.mid,"Spammed")
+                       kc.sendText(g.mid,"Spammed")
+                       ks.sendText(g.mid,"Spammed")
+                       kk.sendText(g.mid,"Spammed")
+                       kt.sendText(g.mid,"Spammed")
                        cl.sendText(g.mid,"Spammed")
                        ki.sendText(g.mid,"Spammed")
                        kc.sendText(g.mid,"Spammed")
@@ -3516,7 +3549,73 @@ def bot(op):
 		
             
 #================================================
+	    elif "/musik " in msg.text:
+					songname = msg.text.replace("/musik ","")
+					params = {"songname": songname}
+					r = requests.get('http://ide.fdlrcn.com/workspace/yumi-apis/joox?' + urllib.urlencode(params))
+					data = r.text
+					data = json.loads(data)
+					for song in data:
+						abc = song[3].replace('https://','http://')
+						cl.sendText(msg.to, "Title : " + song[0] + "\nLength : " + song[1] + "\nLink download : " + song[4])
+						cl.sendText(msg.to, "Lagu " + song[0] + "\nSedang Di Prosses... Tunggu Sebentar ^_^ ")
+						cl.sendAudioWithURL(msg.to,abc)
+						cl.sendText(msg.to, "Selamat Mendengarkan Lagu " + song[0])
+	
+            elif '/lirik ' in msg.text.lower():
+                try:
+                    songname = msg.text.lower().replace('/lirik ','')
+                    params = {'songname': songname}
+                    r = requests.get('http://ide.fdlrcn.com/workspace/yumi-apis/joox?' + urllib.urlencode(params))
+                    data = r.text
+                    data = json.loads(data)
+                    for song in data:
+                        hasil = 'Lyric Lagu ('
+                        hasil += song[0]
+                        hasil += ')\n\n'
+                        hasil += song[5]
+                        cl.sendText(msg.to, hasil)
+                except Exception as wak:
+                        cl.sendText(msg.to, str(wak))
+                        
+	    elif "/musrik " in msg.text:
+					songname = msg.text.replace("/musrik ","")
+					params = {"songname": songname}
+					r = requests.get('http://ide.fdlrcn.com/workspace/yumi-apis/joox?' + urllib.urlencode(params))
+					data = r.text
+					data = json.loads(data)
+					for song in data:
+						abc = song[3].replace('https://','http://')
+						hasil = 'Lyric Lagu ('
+						hasil += song[0]
+						hasil += ')\n\n'
+						hasil += song[5]
+						cl.sendText(msg.to, "Lagu " + song[0] + "\nSedang Di Prosses... Tunggu Sebentar ^_^ ")
+						cl.sendAudioWithURL(msg.to,abc)
+						cl.sendText(msg.to, "Title : " + song[0] + "\nLength : " + song[1] + "\nLink download : " + song[4] +"\n\n" + hasil)
+						cl.sendText(msg.to, "Selamat Mendengarkan Lagu " + song[0])
 #===============================================
+            elif msg.text in ["Simisimi on","Simisimi:on"]:
+                settings["simiSimi"][msg.to] = True
+                cl.sendText(msg.to," Simisimi Di Aktifkan")
+                
+            elif msg.text in ["Simisimi off","Simisimi:off"]:
+                settings["simiSimi"][msg.to] = False
+                cl.sendText(msg.to,"Simisimi Di Nonaktifkan")
+
+#--------------------------------------------------------
+            elif "Image " in msg.text:
+                search = msg.text.replace("Image ","")
+                url = 'https://www.google.com/search?espv=2&biw=1366&bih=667&tbm=isch&oq=kuc&aqs=mobile-gws-lite.0.0l5&q=' + search
+                raw_html = (download_page(url))
+                items = []
+                items = items + (_images_get_all_items(raw_html))
+                path = random.choice(items)
+                print path
+                try:
+                    cl.sendImageWithURL(msg.to,path)
+                except:
+                    pass
 #=================================================
             elif "Spamg " in msg.text:
                 if msg.from_ in admin:
