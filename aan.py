@@ -684,7 +684,7 @@ def bot(op):
             if Hmid in op.param3:
               if wait["autoJoin"] == True:
                 if op.param2 in Bots or creator:
-                  ke2.acceptGroupInvitation(op.param1)
+                  ks2.acceptGroupInvitation(op.param1)
                 else:
                   ks2.rejectGroupInvitation(op.param1)
 #=========================================================================
