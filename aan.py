@@ -3547,17 +3547,19 @@ def bot(op):
                        			cl.updateGroup(G
 #=====================================================================================
           
-            elif msg.text in ["Bye allgroups","Bye sayang"]:
+            elif msg.text in ["Bye all","Bye sayang"]:
               if msg.from_ in admin:
-				gid = cl.getGroupIdsJoined()
-				for i in gid:
-                                        ki.leaveGroup(i)
-                                        kk.leaveGroup(i)
-                                        kc.leaveGroup(i)
-				if wait["lang"] == "JP":
-					cl.sendText(msg.to,"bye-bye")
-				else:
-					cl.sendText(msg.to,"He declined all invitations")
+                if msg.toType == 2:
+                    ginfo = cl.getGroup(msg.to)
+                    try:
+			ki.sendText(msg.to,"see you yang")
+                        ki.leaveGroup(msg.to)
+			kk.sendText(msg.to,"makasih sayang")
+                        kk.leaveGroup(msg.to)
+			kc.sendText(msg.to,"dadah bebih")
+                        kc.leaveGroup(msg.to)
+                    except:
+                        pass
             elif msg.text in ["Team @bye"]:
               if msg.from_ in admin:
                 if msg.toType == 2:
