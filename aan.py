@@ -3473,10 +3473,8 @@ def bot(op):
                 apk = msg.text.replace("/kapan ","")
                 rnd = ["kapan kapan","besok","satu abad lagi","Hari ini","Tahun depan","Minggu depan","Bulan depan","Sebentar lagi","Tidak Akan Pernah"]
                 p = random.choice(rnd)
-                lang = 'id'
-                tts = gTTS(text=p, lang=lang)
-                tts.save("hasil.mp3")
-                cl.sendAudio(msg.to,"hasil.mp3")
+                cl.sendText(msg.to,p)
+		
             
 #================================================
 #===============================================
