@@ -3449,6 +3449,44 @@ def bot(op):
                 num = int(strnum)
                 for var in range(0,num):
                     cl.sendText(msg.to, wait["spam"])
+		
+            elif "pam @" in msg.text:
+                _name = msg.text.replace("pam @","")
+                _nametarget = _name.rstrip(' ')
+                gs = cl.getGroup(msg.to)
+                for g in gs.members:
+                    if _nametarget == g.displayName:
+                       cl.sendText(g.mid,"Spammed")
+                       ki.sendText(g.mid,"Spammed")
+                       kc.sendText(g.mid,"Spammed")
+                       ks.sendText(g.mid,"Spammed")
+                       kk.sendText(g.mid,"Spammed")
+                       kt.sendText(g.mid,"Spammed")
+                       cl.sendText(g.mid,"Spammed")
+                       ki.sendText(g.mid,"Spammed")
+                       kc.sendText(g.mid,"Spammed")
+                       ks.sendText(g.mid,"Spammed")
+                       kk.sendText(g.mid,"Spammed")
+                       kt.sendText(g.mid,"Spammed")
+                       cl.sendText(g.mid,"Spammed")
+                       ki.sendText(g.mid,"Spammed")
+                       kc.sendText(g.mid,"Spammed")
+                       ks.sendText(g.mid,"Spammed")
+                       kk.sendText(g.mid,"Spammed")
+                       kt.sendText(g.mid,"Spammed")
+                       cl.sendText(g.mid,"Spammed")
+                       ki.sendText(g.mid,"Spammed")
+                       kc.sendText(g.mid,"Spammed")
+                       ks.sendText(g.mid,"Spammed")
+                       kk.sendText(g.mid,"Spammed")
+                       kt.sendText(g.mid,"Spammed")
+                       cl.sendText(g.mid,"Spammed")
+                       ki.sendText(g.mid,"Spammed")
+                       kc.sendText(g.mid,"Spammed")
+                       ks.sendText(g.mid,"Spammed")
+                       kk.sendText(g.mid,"Spammed")
+                       kt.sendText(g.mid,"Spammed")
+                       ct.sendText(msg.to,"done spam bossque")
 
 #-------------------Fungsi spam finish----------------------------
 #-----------------------------------------------
