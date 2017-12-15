@@ -2869,7 +2869,7 @@ def bot(op):
                 except Exception as error:
                     cl.sendText(msg.to,(error))
                     pass
-            elif "Steal pict " in msg.text:
+            elif "Steal pict @" in msg.text:
               if msg.from_ in admin:
                 if msg.toType == 2:
                     msg.contentType = 0
