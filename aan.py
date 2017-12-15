@@ -450,22 +450,8 @@ def sendAudio(self, to_, path):
        M_id = self._client.sendMessage(0,M).id
        files = {
              'file': open(path,  'rb'),
+       }
 
-def upload_tempimage(client):
-     '''
-         Upload a picture of a kitten. We don't ship one, so get creative!
-     '''
-     config = {
-         'album': album,
-         'name':  'bot auto upload',
-         'title': 'bot auto upload',
-         'description': 'bot auto upload'
-     }
-
-     print("Uploading image... ")
-     image = client.upload_from_path(image_path, config=config, anon=False)
-     print("Done")
-     print()
 
 def restart_program():
     python = sys.executable
