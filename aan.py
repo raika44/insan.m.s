@@ -271,7 +271,7 @@ wait = {
     "qr":False,
     "welcomemsg":True,
     "Backup":False,
-    "protectionOn"True,
+    "protectionOn":True,
     "winvite":False,
     "pnharfbot":{},
     "pname":{},
