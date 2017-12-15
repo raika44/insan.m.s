@@ -662,7 +662,7 @@ def bot(op):
 		
             if Emid in op.param3:
               if wait["autoJoin"] == True:
-                if op.param2 in Bots creator:
+                if op.param2 in Bots or creator:
                   kt.acceptGroupInvitation(op.param1)
                 else:
                   kt.rejectGroupInvitation(op.param1)
