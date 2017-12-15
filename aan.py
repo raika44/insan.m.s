@@ -802,10 +802,10 @@ def bot(op):
                 else:
                     kc.cancelGroupInvitation(op.param1, matched_list)
 		
-       if op.type == 19:
+        if op.type == 19:
             if op.param2 in Bots:
                 return
-            kk.sendText(op.param1,cl.getContact(op.param2).displayName + " Telah Menendang Member Jones")
+            kk.sendText(op.param1,cl.getContact(op.param2).displayName + " Member Jones Ada yg nendang")
             print "Anggota Grup Di Kick"
 		
         if op.type == 15:
