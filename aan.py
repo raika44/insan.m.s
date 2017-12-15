@@ -3539,12 +3539,12 @@ def bot(op):
 					time.sleep(0.0001)
 					kc.acceptGroupInvitationByTicket(msg.to,Ticket)
 					time.sleep(0.0001)
-					G = cl.getGroup(msg.to)
-					G.preventJoinByTicket = True
-					cl.updateGroup(G)
-					print "All_Kickers_Ok!"
-					G.preventJoinByTicket(G)
-					cl.updateGroup(G)
+               			        G = cl.getGroup(msg.to)
+                       			G.preventJoinByTicket = True
+                       			cl.updateGroup(G)
+                        		print "Bot Complete"
+                       			G.preventJoinByTicket(G)
+                       			cl.updateGroup(G
 #=====================================================================================
           
             elif msg.text in ["Bye allgroups","Bye sayang"]:
