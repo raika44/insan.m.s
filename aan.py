@@ -3018,7 +3018,7 @@ def bot(op):
               if msg.from_ in admin:
                 if msg.toType == 2:
                     msg.contentType = 0
-                    steal0 = msg.text.replace("Steal pict ","")
+                    steal0 = msg.text.replace("Steal pict @","")
                     steal1 = steal0.lstrip()
                     steal2 = steal1.replace("@","")
                     steal3 = steal2.rstrip()
