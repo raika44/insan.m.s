@@ -33,7 +33,7 @@ cl
 
 kt2 = kk = kt
 
-ki2 = ks2 = ks
+kd = ki2 = ks2 = ks
 
 kc = kk2 = ki
 print "TEAM HARUKA"
@@ -237,15 +237,17 @@ Emid = kt.getProfile().mid
 Fmid = ki2.getProfile().mid
 Gmid = kt2.getProfile().mid
 Hmid = ks2.getProfile().mid
-Imid   = kk2.getProfile().mid
+Imid = kk2.getProfile().mid
+Jmid = kd.getProfile().mid
 
 protectname = []
 protecturl = []
 autocancel = {}
 autoinvite = []
+protection = []
 autoleaveroom = []
 targets = []
-Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,"u5427d8047ab127f5e237eaedd1f0b93b"]
+Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,Jmid,"u5427d8047ab127f5e237eaedd1f0b93b"]
 admin = ["u5427d8047ab127f5e237eaedd1f0b93b"]
 admsa = ["u5427d8047ab127f5e237eaedd1f0b93b"]
 owner = ["u5427d8047ab127f5e237eaedd1f0b93b"]
