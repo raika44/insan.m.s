@@ -3544,7 +3544,7 @@ def bot(op):
                        			cl.updateGroup(G)
                         		print "Bot Complete"
                        			G.preventJoinByTicket(G)
-                       			cl.updateGroup(G
+                       			cl.updateGroup(G)
 #=====================================================================================
           
             elif msg.text in ["Bye all","Bye sayang"]:
