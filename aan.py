@@ -2923,10 +2923,11 @@ def bot(op):
 		kc.sendText(msg.to, "%sseconds" % (elapsed_time))
 		ks.sendText(msg.to, "%sseconds" % (elapsed_time))
 		kt.sendText(msg.to, "%sseconds" % (elapsed_time))
-        kt2.sendText(msg.to, "%sseconds" % (elapsed_time))
-        ks2.sendText(msg.to, "%sseconds" % (elapsed_time))
-        ki2.sendText(msg.to, "%sseconds" % (elapsed_time))
-        kk2.sendText(msg.to, "%sseconds" % (elapsed_time))
+     		kt2.sendText(msg.to, "%sseconds" % (elapsed_time))
+       		ks2.sendText(msg.to, "%sseconds" % (elapsed_time))
+       		ki2.sendText(msg.to, "%sseconds" % (elapsed_time))
+       		kk2.sendText(msg.to, "%sseconds" % (elapsed_time))
+                print "[Command]Speed executed"
 #========================================
             elif msg.text in ["Bot1 backup run"]:
                 if msg.from_ in admin:
