@@ -276,6 +276,7 @@ wait = {
     "qr":False,
     "welcomemsg":True,
     "Backup":False,
+    "Protectgr":True,
     "protectionOn":True,
     "winvite":False,
     "pnharfbot":{},
@@ -823,6 +824,15 @@ def bot(op):
                 else:
                   ks2.rejectGroupInvitation(op.param1)
 #=========================================================================
+        #------Protect Group Kick start------#
+        if op.type == 11:
+           if wait["Protectgr"] == True:
+               if op.param2 not in Bots:
+                   G = ka.getGroup(op.param1)
+                   G.preventJoinByTicket = True
+                   random.choice(DEF).kickoutFromGroup(op.param1,[op.param2])
+                   random.choice(DEF).updateGroup(G)
+        #------Protect Group Kick finish-----#
          
         if op.type == 13:
            if wait["Protectcancl"] == True:
@@ -3571,6 +3581,32 @@ def bot(op):
                                except:
                                 cl.sendText(msg.to,"Group cleanse")
 #================================================
+            elif msg.text in ["Gr on","gr on"]:
+              if msg.from_ in admin:
+                if wait["Protectgr"] == True:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Protect Group On")
+                    else:
+                        cl.sendText(msg.to,"done")
+                else:
+                    wait["Protectgr"] = True
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Protect Group On")
+                    else:
+                        cl.sendText(msg.to,"done")
+            elif msg.text in ["Gr off","gr off"]:
+              if msg.from_ in admin:
+                if wait["Protectgr"] == False:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Protect Group Off")
+                    else:
+                        cl.sendText(msg.to,"done")
+                else:
+                    wait["Protectgr"] = False
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Protect Group Off")
+                    else:
+                        cl.sendText(msg.to,"done")
 #========================================
             elif msg.text.lower() == 'welcome':
               if msg.from_ in admin:
