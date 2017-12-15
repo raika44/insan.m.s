@@ -241,7 +241,6 @@ Imid   = kk2.getProfile().mid
 
 protectname = []
 protecturl = []
-protection = []
 autocancel = {}
 autoinvite = []
 autoleaveroom = []
@@ -775,20 +774,6 @@ def bot(op):
                 else:
                   ki.rejectGroupInvitation(op.param1)
 		
-            if Bmid in op.param3:
-              if wait["autoJoin"] == True:
-                if op.param2 in Bots or creator:
-                  kk.acceptGroupInvitation(op.param1)
-                else:
-                  kk.rejectGroupInvitation(op.param1)
-		
-            if Cmid in op.param3:
-              if wait["autoJoin"] == True:
-                if op.param2 in Bots or creator:
-                  kc.acceptGroupInvitation(op.param1)
-                else:
-                  kc.rejectGroupInvitation(op.param1)
-		
             if Dmid in op.param3:
               if wait["autoJoin"] == True:
                 if op.param2 in Bots or owner:
@@ -802,27 +787,7 @@ def bot(op):
                   kt.acceptGroupInvitation(op.param1)
                 else:
                   kt.rejectGroupInvitation(op.param1)
-		
-            if Fmid in op.param3:
-              if wait["autoJoin"] == True:
-                if op.param2 in Bots or creator:
-                  ki2.acceptGroupInvitation(op.param1)
-                else:
-                  ki2.rejectGroupInvitation(op.param1)
                 
-            if Gmid in op.param3:
-              if wait["autoJoin"] == True:
-                if op.param2 in Bots or creator:
-                  kt2.acceptGroupInvitation(op.param1)
-                else:
-                  kt2.rejectGroupInvitation(op.param1)
-                
-            if Hmid in op.param3:
-              if wait["autoJoin"] == True:
-                if op.param2 in Bots or creator:
-                  ks2.acceptGroupInvitation(op.param1)
-                else:
-                  ks2.rejectGroupInvitation(op.param1)
 #=========================================================================
         #------Protect Group Kick start------#
         if op.type == 11:
