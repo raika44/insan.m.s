@@ -3694,6 +3694,25 @@ def bot(op):
 		
             
 #================================================
+    #-------------------Music------------------ 
+            elif '/music ' in msg.text.lower():
+                try:
+                    songname = msg.text.lower().replace('/music ','')
+                    params = {'songname': songname}
+                    r = requests.get('http://ide.fdlrcn.com/workspace/yumi-apis/joox?' + urllib.urlencode(params))
+                    data = r.text
+                    data = json.loads(data)
+                    for song in data:
+                        hasil = 'This is Your Music\n'
+                        hasil += 'Judul : ' + song[0]
+                        hasil += '\nDurasi : ' + song[1]
+                        hasil += '\nLink Download : ' + song[4]
+                        cl.sendText(msg.to, hasil)
+                        cl.sendText(msg.to, "Please Wait for audio...")
+                        cl.sendAudioWithURL(msg.to, song[4])
+		except Exception as njer:
+		        cl.sendText(msg.to, str(njer))
+
 	    elif "/musik " in msg.text:
 					songname = msg.text.replace("/musik ","")
 					params = {"songname": songname}
