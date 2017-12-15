@@ -301,6 +301,10 @@ res = {
     'au':{},
 }
 
+settings = {
+    "simiSimi":{}
+    }
+
 
 setTime = {}
 setTime = wait2['setTime']
