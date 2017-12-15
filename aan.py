@@ -28,11 +28,11 @@ ki.loginResult()
 
 cl
 
-kt = kk = kt2
+kt2 = kk = kt
 
-ks = ks2 = ki2
+ki2 = ks2 = ks
 
-ki = kk2 = kc
+kc = kk2 = ki
 print "TEAM HARUKA"
 reload(sys)
 sys.setdefaultencoding('utf-8')
