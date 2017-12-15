@@ -688,6 +688,12 @@ def bot(op):
                   ks2.rejectGroupInvitation(op.param1)
 #=========================================================================
          
+        if op.type == 13:
+           if wait["Protectcancl"] == True:
+               if op.param2 not in Bots:
+                  group = ka.getGroup(op.param1)
+                  gMembMids = [contact.mid for contact in group.invitee]
+                  random.choice(DEF).cancelGroupInvitation(op.param1, gMembMids)
                 
 #===========================================
         if op.type == 32:
@@ -3376,8 +3382,34 @@ def bot(op):
                                except:
                                 cl.sendText(msg.to,"Group cleanse")
 #================================================
+            elif msg.text in ["Cancl on","cancl on"]:
+              if msg.from_ in admin:
+                if wait["Protectcancl"] == True:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Cancel All Invited On")
+                    else:
+                        cl.sendText(msg.to,"done")
+                else:
+                    wait["Protectcancl"] = True
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Cancel All Invited On")
+                    else:
+                        cl.sendText(msg.to,"done")
+            elif msg.text in ["Cancl off","cancl off"]:
+              if msg.from_ in admin:
+                if wait["Protectcancl"] == False:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Cancel All Invited Off")
+                    else:
+                        cl.sendText(msg.to,"done")
+                else:
+                    wait["Protectcancl"] = False
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Cancel All Invited Off")
+                    else:
+                        cl.sendText(msg.to,"done")
 #========================================
-            elif msg.text.lower() == 'welcome':
+            elif msg.text.lower() == 'Wc,Welcome':
               if msg.from_ in admin:
                 ginfo = cl.getGroup(msg.to)
                 cl.sendText(msg.to,"Selamat Datang Di Grup " + str(ginfo.name))
