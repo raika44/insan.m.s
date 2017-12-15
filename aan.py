@@ -1781,22 +1781,22 @@ def bot(op):
                     profile.statusMessage = string
                     kt.updateProfile(profile)
                     cl.sendText(msg.to,"successfully turn it into: " + string + "")
-                 if len(string.decode('utf-8')) <= 500:
+                if len(string.decode('utf-8')) <= 500:
                     profile = kt2.getProfile()
                     profile.statusMessage = string
                     kt2.updateProfile(profile)
                     cl.sendText(msg.to,"successfully turn it into: " + string + "")
-                 if len(string.decode('utf-8')) <= 500:
+                if len(string.decode('utf-8')) <= 500:
                     profile = ks2.getProfile()
                     profile.statusMessage = string
                     ks2.updateProfile(profile)
                     cl.sendText(msg.to,"successfully turn it into: " + string + "")
-                 if len(string.decode('utf-8')) <= 500:
+                if len(string.decode('utf-8')) <= 500:
                     profile = ki2.getProfile()
                     profile.statusMessage = string
                     ki2.updateProfile(profile)
                     cl.sendText(msg.to,"successfully turn it into: " + string + "")
-                 if len(string.decode('utf-8')) <= 500:
+                if len(string.decode('utf-8')) <= 500:
                     profile = kk2.getProfile()
                     profile.statusMessage = string
                     kk2.updateProfile(profile)
