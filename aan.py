@@ -1610,6 +1610,20 @@ def bot(op):
                                          cl.sendText(msg.to,"Negative, Error detected")
                                          wait["winvite"] = False
                                          break
+						
+        if op.type == 26:
+            msg = op.message
+            if msg.to in settings["simiSimi"]:
+                if settings["simiSimi"][msg.to] == True:
+                    if msg.text is not None:
+                        text = msg.text
+                        r = requests.get("http://api.ntcorp.us/chatbot/v1/?text=" + text.replace(" ","+") + "&key=beta1.nt")
+                        data = r.text
+                        data = json.loads(data)
+                        if data['status'] == 200:
+                            if data['result']['result'] == 100:
+                                cl.sendText(msg.to,data['result']['response'].encode('utf-8'))
+				
             elif "Invite:" in msg.text:
               if msg.from_ in admin:
                 midd = msg.text.replace("Invite:"," ")
