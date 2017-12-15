@@ -2183,10 +2183,10 @@ def bot(op):
 			kc.sendText(msg.to,Cmid)
 			ks.sendText(msg.to,Dmid)
 			kt.sendText(msg.to,Emid)
-            kt2.sendText(msg.to,Fmid)
-            ks2.sendText(msg.to,Gmid)
-            ki2.sendText(msg.to,Hmid)
-            kk2.sendText(msg.to,Imid)
+		   	kt2.sendText(msg.to,Fmid)
+           		ks2.sendText(msg.to,Gmid)
+           		ki2.sendText(msg.to,Hmid)
+           		kk2.sendText(msg.to,Imid)
  #=======================================================
            elif "Translate-eng " in msg.text:
               if msg.from_ in admin:
