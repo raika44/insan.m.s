@@ -2072,7 +2072,7 @@ def bot(op):
                  nya = ap[0].members
                  for a in nya:
                      Mi_d = str(a.mid)
-                random.choice(KAC).createGroup(gName, semua)
+                 random.choice(KAC).createGroup(gName, semua)
                 #cl.leaveRoom(op.param1)
                 #cl.leaveGroup([msg.to])
 
